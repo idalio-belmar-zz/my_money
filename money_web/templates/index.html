@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+
+{% if lista_meses %}
+    <ul>
+    {% for mes in lista_meses %}
+        <li><a href="/money_web/{{ mes.id }}/">{{ mes.mes }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Hay meses disponibles.</p>
+{% endif %}
+
+{% endblock contenido %}

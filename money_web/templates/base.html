@@ -1,0 +1,228 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es-Es">
+    <head>
+        <title>My Money</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'bootstrap/journal/bootstrap.css' %}" media="screen">
+        <link rel="stylesheet" href="{% static 'bootstrap/bower_components/font-awesome/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'bootstrap/assets/css/bootswatch.min.css' %}">
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-23019901-1']);
+            _gaq.push(['_setDomainName', "bootswatch.com"]);
+            _gaq.push(['_setAllowLinker', true]);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+    </head>
+    <body>
+        <script src="{% static 'bootstrap/assets/js/bsa.js' %}"></script>
+
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="../" class="navbar-brand">My Money</a>
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar-main">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Themes <span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="themes">
+                                <li><a tabindex="-1" href="../default/">Default</a></li>
+                                <li class="divider"></li>
+                                <li><a tabindex="-1" href="../amelia/">Amelia</a></li>
+                                <li><a tabindex="-1" href="../cerulean/">Cerulean</a></li>
+                                <li><a tabindex="-1" href="../cosmo/">Cosmo</a></li>
+                                <li><a tabindex="-1" href="../cyborg/">Cyborg</a></li>
+                                <li><a tabindex="-1" href="../flatly/">Flatly</a></li>
+                                <li><a tabindex="-1" href="../journal/">Journal</a></li>
+                                <li><a tabindex="-1" href="../readable/">Readable</a></li>
+                                <li><a tabindex="-1" href="../simplex/">Simplex</a></li>
+                                <li><a tabindex="-1" href="../slate/">Slate</a></li>
+                                <li><a tabindex="-1" href="../spacelab/">Spacelab</a></li>
+                                <li><a tabindex="-1" href="../united/">United</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../help/">Help</a>
+                        </li>
+                        <li>
+                            <a href="http://news.bootswatch.com">Blog</a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Download <span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="download">
+                                <li><a tabindex="-1" href="./bootstrap.min.css">bootstrap.min.css</a></li>
+                                <li><a tabindex="-1" href="./bootstrap.css">bootstrap.css</a></li>
+                                <li class="divider"></li>
+                                <li><a tabindex="-1" href="./variables.less">variables.less</a></li>
+                                <li><a tabindex="-1" href="./bootswatch.less">bootswatch.less</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap</a></li>
+                        <li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">WrapBootstrap</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+
+            <div class="page-header" id="banner">
+                <div class="row">
+                    <div class="col-lg-6">
+
+                        <img src="{% static 'bootstrap/images/texture.png' %}">
+
+                    </div>
+                    <div class="col-lg-6">
+                        <h1>Registrate Ahora!!</h1>
+                        <p class="lead">Aumenta tu capacidad de ahorro</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="well">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#login" data-toggle="tab">Ingresa</a></li>
+                        <li><a href="#create" data-toggle="tab">Registrate</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane active in" id="login">                                
+                            <div class="well">
+
+                                <fieldset>
+                                    <legend>Ingresa tus datos</legend>
+                                    <form method="POST" action="login/" class="bs-example form-horizontal">
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="col-lg-2 control-label">Nombre Usuario</label>
+                                            <div class="col-lg-3">
+                                                <input type="text" class="form-control" id="user_name" placeholder="Nombre de Usuario">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword" class="col-lg-2 control-label">Contraseña</label>
+                                            <div class="col-lg-3">
+                                                <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input id="recordar" type="checkbox"> Recuerdame
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <input type="submit" class="btn btn-primary"value="Ingresar"/>
+                                            <button class="btn btn-default">Limpiar</button>
+                                        </div>
+                                        {% csrf_token %}
+                                    </form>
+                                </fieldset>
+
+                            </div>                                   
+                        </div>
+                        <div class="tab-pane fade" id="create">
+                            <div class="well">
+
+                                <fieldset>
+                                    <legend>Ingresa tus datos</legend>
+                                    <form id="login" method="POST" action="#" class="bs-example form-horizontal">
+                                        <div class="form-group">
+                                            <label for="inputUser" class="col-lg-2 control-label">Nombre Completo</label>
+                                            <div class="col-lg-3">
+                                                <input type="text" class="form-control" id="name" placeholder="Nombre Completo">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail" class="col-lg-2 control-label">Nombre Usuario</label>
+                                            <div class="col-lg-3">
+                                                <input type="text" class="form-control" id="email" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputUser" class="col-lg-2 control-label">Nombre Usuario</label>
+                                            <div class="col-lg-3">
+                                                <input type="text" class="form-control" id="user_name" placeholder="Nombre Usuario">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword" class="col-lg-2 control-label">Contraseña</label>
+                                            <div class="col-lg-3">
+                                                <input type="password" class="form-control" id="password" placeholder="Contraseña">                                                        
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPassword" class="col-lg-2 control-label">Repita Contraseña</label>
+                                            <div class="col-lg-3">
+                                                <input type="password" class="form-control" id="password_repeat" placeholder="Contraseña">                                                        
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-primary">Registrar <i class="icon-user"></i></button>
+                                            <button class="btn btn-default">Limpiar</button>
+                                        </div>
+                                    </form>
+                                </fieldset>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <ul class="list-unstyled">
+                            <li class="pull-right"><a href="#top">Subir!</a></li>
+                            <li><a href="http://news.bootswatch.com" onclick="pageTracker._link(this.href);
+                return false;">Blog</a></li>
+                            <li><a href="http://feeds.feedburner.com/bootswatch">RSS</a></li>
+                            <li><a href="https://twitter.com/thomashpark">Twitter</a></li>
+                            <li><a href="https://github.com/thomaspark/bootswatch/">GitHub</a></li>
+                            <li><a href="../help/#api">API</a></li>
+                            <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=F22JEM3Q78JC2">Donate</a></li>
+                        </ul>
+                        <p>Made by <a href="http://thomaspark.me">Thomas Park</a>. Contact him at <a href="mailto:hello@thomaspark.me">hello@thomaspark.me</a>.</p>
+                        <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>.</p>
+                        <p>Based on <a href="http://getbootstrap.com">Bootstrap</a>. Icons from <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts">Google</a>. Favicon by <a href="https://twitter.com/geraldhiller">Gerald Hiller</a>.</p>
+
+                    </div>
+                </div>
+
+            </footer>
+
+
+        </div>
+
+
+        <script src="{% static 'bootstrap/bower_components/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'bootstrap/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'bootstrap/assets/js/bootswatch.js' %}"></script>
+    </body>
+</html>

@@ -37,7 +37,7 @@ TIME_ZONE = 'America/Santiago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-ES'
+LANGUAGE_CODE = 'es-ES'
 
 SITE_ID = 1
 
@@ -62,11 +62,14 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = '/home/idalio/GitHub/my_money/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
+
+# URL of the login page.
+LOGIN_URL = '/login/'
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
@@ -78,6 +81,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    #'/home/idalio/GitHub/my_money/static/',
 )
 
 # List of finder classes that know how to find static files in
@@ -109,6 +113,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'my_money.urls'
 
 TEMPLATE_DIRS = (
+    '/home/idalio/Github/My_money/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -123,7 +128,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'my_money.money_web',
     # Uncomment the next line to enable the admin:
-     'django.contrib.admin',
+    'django_bootstrap_staticfiles',
+    'django_admin_bootstrapped',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
@@ -140,6 +147,13 @@ LOGGING = {
         'mail_admins': {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    'handlers': {
+    'mail_admins': {
+        'level': 'ERROR',
+        #'filters': ['require_debug_false'],
+        'class': 'django.utils.log.AdminEmailHandler'
         }
     },
     'loggers': {
